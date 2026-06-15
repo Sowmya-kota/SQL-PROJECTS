@@ -163,5 +163,9 @@ select
       from top_3 t 
       join avg_sales a
       on t.city_name = a.city_name
-       where t.rn <=3 ;
+	  -- WHERE t.rn <= 3 -- Version 1: Question answer (నీ current code) ✅
+      -- Version 2: Business recommendation
+      WHERE avg_rent_per_cx < 500
+	  ORDER BY total_sales DESC
+      LIMIT 3;
 	   
